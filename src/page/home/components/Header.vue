@@ -21,11 +21,13 @@ export default {
 </script>
  
 <style lang="stylus" scoped>
+@import '~style/globalstyle.styl'
+
 .header
     display: flex
     height: 0.86rem
     color: #ffffff
-    background: #00bcd4
+    background: $backColor
     line-height: 0.86rem
 
     .header-left
