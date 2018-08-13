@@ -1,10 +1,10 @@
 # myvueproject
 
-> A Vue.js project
+> 一个类似旅游 app 的 vue 前端工程，需要使用 fastclick, stylus，vue-awesome-swiper 等包
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
