@@ -5,7 +5,7 @@
             <span class="title-content">热销推荐</span>
         </div>
         <ul>
-            <li class="recommend-li border-bottom" v-for="item in recommendList" :key="item.id">
+            <li class="recommend-li border-bottom" v-for="item in list" :key="item.id">
                 <img class="recommend-img" :src="item.imgUrl" >
                 <div class="recommend-info">
                     <p class="recommend-title">{{item.title}}</p>
@@ -20,32 +20,8 @@
 <script>
 export default {
   name: "HomeRecommend",
-  data() {
-    return {
-      recommendList: [
-        {
-          id: "001",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1807/99/992c99c98928c509a3.water.jpg_200x200_fc4df6ea.jpg",
-          title: "深圳欢乐谷",
-          desc: "广东省深圳市南山区华侨城侨城街1号"
-        },
-        {
-          id: "002",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1507/64/34362835b4a219af8b36803d31a6380f.water.jpg_200x200_bc5c0452.jpg",
-          title: "深圳小梅沙海洋世界",
-          desc: "广东省深圳市盐田区小梅沙海洋世界"
-        },
-        {
-          id: "003",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1805/6f/6f885ea8b30c67bca3.water.jpg_200x200_21b03a9c.jpg",
-          title: "世界之窗",
-          desc: "广东省深圳市南山区深南大道9037号"
-        }
-      ]
-    };
+  props: {
+    list: Array
   }
 };
 </script>

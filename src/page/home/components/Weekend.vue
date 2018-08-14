@@ -5,7 +5,7 @@
             <span class="title-content">周末去哪儿</span>
         </div>
         <ul>
-            <li class="recommend-li border-bottom" v-for="item in recommendList" :key="item.id">
+            <li class="recommend-li border-bottom" v-for="item in list" :key="item.id">
                 <div class="img-swaper">
                     <img class="recommend-img" :src="item.imgUrl" >
                 </div>
@@ -21,32 +21,8 @@
 <script>
 export default {
   name: "HomeWeekend",
-  data() {
-    return {
-      recommendList: [
-        {
-          id: "001",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/source/1505/fa/ca65fde9677de2.jpg_r_640x214_4500e3ff.jpg",
-          title: "深圳必游TOP10",
-          desc: "当地人带你发现不一样的深圳"
-        },
-        {
-          id: "002",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/source/1602/88/bf120edeaea383.jpg_r_640x214_f8591f7b.jpg",
-          title: "欢乐长隆",
-          desc: "世界欢乐汇聚长隆"
-        },
-        {
-          id: "003",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/source/1505/eb/e4b181a6957c36.jpg_r_640x214_4abbdbc0.jpg",
-          title: "情侣好去处",
-          desc: "手牵手，一起走到老"
-        }
-      ]
-    };
+  props: {
+    list: Array
   }
 };
 </script>
