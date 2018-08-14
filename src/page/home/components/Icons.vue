@@ -106,7 +106,6 @@ export default {
 .icons
   overflow: hidden
   padding: 0 0.1rem
-  background-color: #fff
   margin: 0.2rem 0
 
   .icon-item
