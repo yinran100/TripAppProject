@@ -32,10 +32,10 @@ export default {
     height: $headerHeight
     color: #ffffff
     background: $backColor
-    line-height:$headerHeight
+    line-height: $headerHeight
 
     .header-left
-        float: left2
+        float: left
         width: 0.64rem
 
         .back-icon
@@ -57,7 +57,7 @@ export default {
         text-align: center
         float: right
         width: 1.34rem
-        color #ffffff
+        color: #ffffff
 
         .arrow-icon
             font-size: 0.3rem
