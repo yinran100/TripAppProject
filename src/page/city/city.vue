@@ -2,8 +2,9 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :hotCities="hotCities" :allCities="allCities"></city-list>
-    <letter-query :allCities="allCities"></letter-query>
+    <city-list :hotCities="hotCities" :allCities="allCities" :letter="letter"></city-list>
+    <letter-query :allCities="allCities" @change="letterChange"></letter-query>
+    <layer-text :letter="letter"></layer-text>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import CityHeader from "./components/Header";
 import CitySearch from "./components/Search";
 import CityList from "./components/List";
 import LetterQuery from "./components/LetterQuery";
+import LayerText from "./components/LayerText";
 import axios from "axios";
 export default {
   name: "City",
@@ -19,12 +21,14 @@ export default {
     CityHeader,
     CitySearch,
     CityList,
-    LetterQuery
+    LetterQuery,
+    LayerText
   },
   data() {
     return {
       hotCities: [],
-      allCities: {}
+      allCities: {},
+      letter: ""
     };
   },
   methods: {
@@ -38,6 +42,10 @@ export default {
         this.hotCities = data.hotCities;
         this.allCities = data.cities;
       }
+    },
+    letterChange(e) {
+      //console.log(e + "!!!");
+      this.letter = e;
     }
   },
   mounted() {

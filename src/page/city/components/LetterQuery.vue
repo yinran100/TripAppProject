@@ -1,5 +1,5 @@
 <template>
-    <ul class="letter-list">
+    <ul class="letter-list" @click="handleClick">
         <li class="item" v-for="(item,key) of allCities" :key="key">{{key}}</li>
     </ul>
 </template>
@@ -8,6 +8,11 @@ export default {
   name: "LetterQuery",
   props: {
     allCities: Object
+  },
+  methods: {
+    handleClick(e) {
+      this.$emit("change", e.target.innerText);
+    }
   }
 };
 </script>
@@ -25,7 +30,7 @@ export default {
     justify-content: center
 
     .item
-        line-height: 0.36rem
+        line-height: 0.38rem
         color: $backColor
         text-align: center
 </style>
