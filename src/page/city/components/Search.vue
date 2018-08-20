@@ -21,8 +21,8 @@ export default {
         height: 0.62rem
         border-radius: 0.06rem
         padding: 0 0.1rem
+        font-family: 'Microsoft Yahei', Arial
         box-sizing: border-box
-        color: #666
+        color: #555
         text-align: center
-        margin-top: 0.05rem
 </style>
