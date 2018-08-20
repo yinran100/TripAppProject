@@ -2,8 +2,8 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list></city-list>
-    <letter-query></letter-query>
+    <city-list :hotCities="hotCities" :allCities="allCities"></city-list>
+    <letter-query :allCities="allCities"></letter-query>
   </div>
 </template>
 
@@ -12,6 +12,7 @@ import CityHeader from "./components/Header";
 import CitySearch from "./components/Search";
 import CityList from "./components/List";
 import LetterQuery from "./components/LetterQuery";
+import axios from "axios";
 export default {
   name: "City",
   components: {
@@ -21,9 +22,27 @@ export default {
     LetterQuery
   },
   data() {
-    return {};
+    return {
+      hotCities: [],
+      allCities: {}
+    };
   },
-  methods: {}
+  methods: {
+    getCityInfo() {
+      axios.get("/api/city.json").then(this.getCityDataSucc);
+    },
+    getCityDataSucc(res) {
+      res = res.data;
+      if (res.ret && res.data) {
+        const data = res.data;
+        this.hotCities = data.hotCities;
+        this.allCities = data.cities;
+      }
+    }
+  },
+  mounted() {
+    this.getCityInfo();
+  }
 };
 </script>
 
