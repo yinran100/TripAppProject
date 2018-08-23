@@ -17,7 +17,6 @@ export default {
   },
   watch: {
     letter() {
-      console.log("LayerText_______" + this.letter);
       this.isShow = true;
       if (this.timer) {
         clearTimeout(this.timer);
@@ -33,15 +32,15 @@ export default {
 @import '~style/globalstyle.styl'
 
 .layer-text
-    display: flex
-    justify-content: center
-    position: absolute
-    width: 2.4rem
-    top: 35%
-    left: 33.33%
-    font-size: 1.2rem
-    background-color: rgba(0, 0, 0, 0.1)
-    line-height: 2
-    border-radius: 0.5rem
-    color: #fff
+  display: flex
+  justify-content: center
+  position: absolute
+  width: 2.4rem
+  top: 35%
+  left: 33.33%
+  font-size: 1.2rem
+  background-color: rgba(0, 0, 0, 0.1)
+  line-height: 2
+  border-radius: 0.5rem
+  color: #fff
 </style>
