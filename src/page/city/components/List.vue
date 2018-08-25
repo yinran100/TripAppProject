@@ -4,15 +4,19 @@
             <div class="area">
                 <div class="title border-topbottom">当前城市</div>
                 <div class="btn-list">
-                    <div class="btn-wrapper">
-                        <div class="btn-city">深圳</div>
+                    <div class="btn-wrapper"  @click="handleClick(city)">
+                        <div class="btn-city"> {{city}}</div>
                     </div>
                 </div>
             </div>
             <div class="area">
                 <div class="title border-topbottom">热门城市</div>
                 <div class="btn-list">
-                    <div class="btn-wrapper" v-for="item in hotCities" :key="item.id">
+                    <div class="btn-wrapper" 
+                        v-for="item in hotCities" 
+                        :key="item.id" 
+                        @click="handleClick(item.name)"
+                    >
                         <div class="btn-city">{{item.name}}</div>
                     </div>
                 </div>
@@ -21,7 +25,12 @@
                 <div class="title border-topbottom" >{{key}}</div>
                 <div class="item-list">
                     <ul>
-                        <li class="border-bottom" v-for="subItem in item" :key="subItem.id">{{subItem.name}}</li>
+                        <li class="border-bottom" 
+                            v-for="subItem in item" 
+                            :key="subItem.id" 
+                            @click="handleClick(subItem.name)"
+                        >
+                            {{subItem.name}}</li>
                     </ul>
                 </div>
             </div>
@@ -30,12 +39,22 @@
 </template>
 <script>
 import BScroll from "better-scroll";
+import { mapState } from "vuex";
 export default {
   name: "CityList",
   props: {
     hotCities: Array,
     allCities: Object,
     letter: String
+  },
+  computed: {
+    ...mapState(["city"])
+  },
+  methods: {
+    handleClick(city) {
+      this.$store.dispatch("changeCity", city);
+      this.$router.push("/");
+    }
   },
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper);

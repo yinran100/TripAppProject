@@ -1,7 +1,6 @@
 {
   "ret": "true",
   "data": {
-    "city": "深圳",
     "swiperList": [{
         "id": "001",
         "imgUrl": "https://source.qunarzz.com/site/images/wap/home/recommend/iphoneplus/20180716_wap_11043.jpg"
