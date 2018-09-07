@@ -1,6 +1,6 @@
 # myvueproject
 
-> 一个类似旅游 app 的 vue 前端工程，需要使用 fastclick, stylus，vue-awesome-swiper，axios，better-scroll 等包，基于 webpack 打包工具以及 webpack-dev-server 工具提供数据请求替换机制
+> 一个类似旅游 app 的 vue 前端工程，需要使用 vuex,vue-router, stylus，vue-awesome-swiper，axios，better-scroll，fastclick 等包，基于 webpack 打包工具以及 webpack-dev-server 工具提供数据请求替换机制
 
 ## Build Setup
 

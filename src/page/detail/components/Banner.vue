@@ -1,15 +1,38 @@
 <template>
     <div class="banner-wrapper">
-        <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1807/99/992c99c98928c509a3.water.jpg_600x330_3b1186e2.jpg">
+        <img class="banner-img"  @click="showGallery" src="//img1.qunarzz.com/sight/p0/1807/99/992c99c98928c509a3.water.jpg_600x330_3b1186e2.jpg">
         <div class="banner-info">
             <div class="title">深圳欢乐谷(AAAAA景区)</div>
             <div class="pic"><span class="pic-iconfont iconfont">&#xe691;</span>33</div>
         </div>
+        <gallery :imgs="imgArr" v-show="isShowGallery"  @galleryClick="hideGallery"></gallery>
     </div>
 </template>
 <script>
+import Gallery from "common/gallery/Gallery";
 export default {
-  name: "DetailBanner"
+  name: "DetailBanner",
+  components: {
+    Gallery
+  },
+  data() {
+    return {
+      isShowGallery: false,
+      imgArr: [
+        "//img1.qunarzz.com/sight/p0/1807/99/992c99c98928c509a3.water.jpg_600x330_3b1186e2.jpg",
+        "//img1.qunarzz.com/sight/p0/1805/17/176c2114bb8ae255a3.water.png_r_800x800_59037929.png",
+        "//img1.qunarzz.com/sight/p0/1807/33/3359ac3a4bdd2b30a3.water.jpg_r_800x800_735422fe.jpg"
+      ]
+    };
+  },
+  methods: {
+    showGallery() {
+      this.isShowGallery = true;
+    },
+    hideGallery() {
+      this.isShowGallery = false;
+    }
+  }
 };
 </script>
 <style lang="stylus" scoped>
