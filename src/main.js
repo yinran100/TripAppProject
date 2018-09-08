@@ -23,6 +23,7 @@ import 'style/reset.css'
 import 'style/border.css'
 import 'style/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+import 'animate.css/animate.min.css'
 
 
 Vue.config.productionTip = false
