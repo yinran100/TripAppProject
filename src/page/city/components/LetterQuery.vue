@@ -5,7 +5,7 @@
           v-for="item of letterList" 
           :key="item"
           :ref="item"
-          @touchstart="handleTouchStart"
+          @touchstart.prevent="handleTouchStart"
           @touchmove="handleTouchMove"
           @touchend="handleTouchEnd"
         >
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     handleClick(e) {
-      this.$emit("change", e.target.innerText);
+      this.$emit("change", e.target.innerText[0]);
     },
     handleTouchStart(e) {
       this.touchStatus = true;
@@ -65,7 +65,7 @@ export default {
 @import '~style/globalstyle.styl'
 
 .letter-list
-  position: absolute
+  position: fixed
   user-select: none
   right: 0
   top: 1.58rem

@@ -1,10 +1,9 @@
 <template>
+<transition :name="transitionName">
   <keep-alive>
-    <transition :name="transitionName">
       <router-view class="router-class"></router-view>
-    </transition>
   </keep-alive>
-    
+     </transition>
 </template>
 
 <script>
@@ -37,7 +36,6 @@ export default {
 .router-class {
   position: absolute;
   width: 100%;
-  overflow: hidden;
   height: 100%;
   transition: all 0.3s ease;
   background-color: #f8f8f8;
